@@ -1,0 +1,12 @@
+from django.shortcuts import render
+
+# Create your views here.
+from django.views.generic import TemplateView, ListView
+from task.models import TaskItems
+
+class Index(TemplateView):
+    template_name = "base.html"
+
+class TaskListView(ListView):
+    template_name = "task/task_list.html"
+    queryset = TaskItems.objects.all()
